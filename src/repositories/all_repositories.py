@@ -6,6 +6,7 @@ from src.models.offer import Offer
 from src.models.organization import Organization
 from src.models.profession import Profession
 from src.models.resume import Resume
+from src.models.worker_notification import WorkerNotification
 
 from src.repositories.repository import SQLAlchemyRepository
 
@@ -41,3 +42,6 @@ class ResumeRepository(SQLAlchemyRepository):
 class ResumeOfferRepository(SQLAlchemyRepository):
     model = ResumeOffer
 
+
+class WorkerNotificationRepository(SQLAlchemyRepository):
+    model = WorkerNotification

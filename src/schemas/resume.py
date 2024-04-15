@@ -14,7 +14,7 @@ class ResumeCreate(BaseModel):
     gender: str
     birthday: date
     profession_id: int
-    disability_type_id: int
+    disability_id: int
 
     class from_attributes:
         orm_mode = True

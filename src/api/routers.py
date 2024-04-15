@@ -4,6 +4,7 @@ from .v1.user import user_router
 from .v1.worker.offer import worker_offer_router
 from .v1.worker.resume import worker_resume_router
 from .v1.worker.experience import worker_experience_router
+from .v1.worker.worker_notification import worker_notification_router
 
 all_routers = [
     auth_router,
@@ -12,4 +13,5 @@ all_routers = [
     worker_offer_router,
     worker_resume_router,
     worker_experience_router,
+    worker_notification_router,
 ]
