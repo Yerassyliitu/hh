@@ -6,6 +6,7 @@ from src.services.offer import OfferService
 from src.services.organization import OrganizationService
 from src.services.profession import ProfessionService
 from src.services.resume import ResumeService
+from src.services.worker_notification import WorkerNotificationService
 
 
 def user_service():
@@ -17,7 +18,7 @@ def disability_type_service():
 
 
 def experience_service():
-    return ExperiencService(ExperienseRepository())
+    return ExperiencService(ExperienceRepository())
 
 
 def offer_service():
@@ -34,4 +35,8 @@ def profession_service():
 
 def resume_service():
     return ResumeService(ResumeRepository())
+
+
+def worker_notification_service():
+    return WorkerNotificationService(WorkerNotificationRepository())
 
