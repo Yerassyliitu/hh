@@ -43,4 +43,4 @@ with app.app_context():
     admin.add_view(ModelView(User, session=bd.session))
     admin.add_view(ModelView(WorkerNotification, session=bd.session))
 
-app.run(debug=True)
+app.run(host='0.0.0.0', debug=True)
