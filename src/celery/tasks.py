@@ -2,10 +2,13 @@ from .celery import celery
 
 
 celery.conf.beat_schedule = {
-    'add-every-30-seconds': {
+    'send-every-day': {
         'task': 'src.celery.tasks.test',
-        'schedule': 5.0,
-
+        'schedule': 86400,
+    },
+    'send-every-week': {
+        'task': 'src.celery.tasks.test',
+        'schedule': 345600,
     },
 }
 
