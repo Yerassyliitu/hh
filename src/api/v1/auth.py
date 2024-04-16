@@ -2,11 +2,13 @@ from typing import Annotated
 
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.security import OAuth2PasswordRequestForm
-from src.api.dependencies import user_service
+from src.api.dependencies import user_service, worker_regular_alert_service
 from src.helper_functions.auth_handler import get_current_user, bcrypt_context, create_access_token, \
     create_refresh_token
 from src.schemas.user import UserRegistration, UserCreate
+
 from src.services.user import UserService
+from src.services.worker_regular_alert import WorkerRegularAlertService
 
 from sqlalchemy.exc import IntegrityError
 
@@ -22,6 +24,7 @@ auth_router = APIRouter(prefix="/v1/auth", tags=["auth"])
 async def add_user(
         user: UserRegistration,
         users_service: Annotated[UserService, Depends(user_service)],
+        worker_regular_alert_service: Annotated[WorkerRegularAlertService, Depends(worker_regular_alert_service)]
 ):
     try:
         if user.password == user.confirm_password:
@@ -31,6 +34,10 @@ async def add_user(
                 role_id=user.role_id
             )
             user_id = await users_service.create_entity(user)
+            
+            worker_regular_alert = await worker_regular_alert_service.create_entity({'user_id': user_id})
+            if worker_regular_alert:
+                pass
             return user_id
         else:
             raise HTTPException(status_code=400, detail="Пароли не совпадают")

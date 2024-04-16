@@ -19,6 +19,8 @@ from src.models.profession import Profession
 from src.models.resume import Resume
 from src.models.resume_offer import ResumeOffer
 from src.models.worker_notification import WorkerNotification
+from src.models.regular_alert import RegularAlert
+from src.models.worker_regular_alert import WorkerRegularAlert
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config

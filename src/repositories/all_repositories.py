@@ -7,6 +7,8 @@ from src.models.organization import Organization
 from src.models.profession import Profession
 from src.models.resume import Resume
 from src.models.worker_notification import WorkerNotification
+from src.models.regular_alert import RegularAlert
+from src.models.worker_regular_alert import WorkerRegularAlert
 
 from src.repositories.repository import SQLAlchemyRepository
 
@@ -45,3 +47,11 @@ class ResumeOfferRepository(SQLAlchemyRepository):
 
 class WorkerNotificationRepository(SQLAlchemyRepository):
     model = WorkerNotification
+
+
+class RegularAlertRepository(SQLAlchemyRepository):
+    model = RegularAlert
+
+
+class WorkerRegularAlertRepository(SQLAlchemyRepository):
+    model = WorkerRegularAlert
