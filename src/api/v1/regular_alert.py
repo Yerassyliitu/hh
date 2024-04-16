@@ -7,8 +7,6 @@ from src.services.regular_alert import RegularAlertService
 from src.schemas.regular_alert import RegularAlertCreate
 
 
-from src.celery.tasks import test
-
 regular_alert_router = APIRouter(prefix="/v1/regular-alert", tags=["regular-alert"])
 
 

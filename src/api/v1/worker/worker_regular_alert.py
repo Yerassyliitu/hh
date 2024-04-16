@@ -7,9 +7,9 @@ from src.helper_functions.auth_handler import get_current_user
 from src.services.worker_regular_alert import WorkerRegularAlertService
 
 
-from src.celery.tasks import test
-
 worker_regular_alert_router = APIRouter(prefix="/v1/worker/regular-alert", tags=["worker / regular-alert"])
+
+
 
 @worker_regular_alert_router.post(
     "/",
