@@ -1,5 +1,5 @@
 from pydantic import BaseModel, EmailStr
-
+from enum import Enum
 
 class RegularAlertRead(BaseModel):
     id: int
@@ -8,8 +8,12 @@ class RegularAlertRead(BaseModel):
     class from_attributes:
         orm_mode = True
 
+class Period(str, Enum):
+    daily = "daily"
+    weekly = "weekly"
+
 class RegularAlertCreate(BaseModel):
     email: EmailStr
-    period: str = "daily"
+    period: Period
     class from_attributes:
         orm_mode = True

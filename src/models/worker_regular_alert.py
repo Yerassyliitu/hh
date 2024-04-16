@@ -12,5 +12,5 @@ class WorkerRegularAlert(Base):
     def to_read_model(self) -> WorkerRegularAlertRead:
         return WorkerRegularAlertRead(
             id=self.id,
-            user=self.user.to_read_model(),
+            user={"email": self.user.email},
         )
