@@ -1,5 +1,6 @@
-from src.models.disability_type import DisabilityType
 from src.models.resume_offer import ResumeOffer
+from src.models.disability_type import DisabilityType
+
 from src.models.resume import Resume
 from src.models.experience import Experience
 from src.models.offer import Offer
@@ -42,6 +43,4 @@ with app.app_context():
     admin.add_view(ModelView(User, session=bd.session))
     admin.add_view(ModelView(WorkerNotification, session=bd.session))
 
-
-if __name__ == "__main__":
-    app.run(debug=True)
+app.run(debug=True)
