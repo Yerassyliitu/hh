@@ -7,6 +7,8 @@ from src.services.organization import OrganizationService
 from src.services.profession import ProfessionService
 from src.services.resume import ResumeService
 from src.services.worker_notification import WorkerNotificationService
+from src.services.regular_alert import RegularAlertService
+from src.services.worker_regular_alert import WorkerRegularAlertService
 
 
 def user_service():
@@ -39,4 +41,12 @@ def resume_service():
 
 def worker_notification_service():
     return WorkerNotificationService(WorkerNotificationRepository())
+
+
+def regular_alert_service():
+    return RegularAlertService(RegularAlertRepository())
+
+
+def worker_regular_alert_service():
+    return WorkerRegularAlertService(WorkerRegularAlertRepository())
 
